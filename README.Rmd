@@ -69,6 +69,8 @@ Fora do horário de aula ou monitoria:
   dplyr::select(Exemplo = url) |>
   knitr::kable()
 ```
+
+
 ## Práticas
 
 ```{r}
@@ -98,14 +100,12 @@ conteúdo da aula).
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-arquivo_csv_materiais <- "extras.csv"
-if (file.exists(arquivo_csv_materiais)) {
-  arquivo_csv_materiais |>
-    readr::read_csv2(show_col_types = FALSE) |>
-    knitr::kable()
-} else {
-  cat("Em breve!")
-}
+url <- "https://docs.google.com/spreadsheets/d/1Ipmjvh3yJKRMU_ScQCb5z4UwQuzjBV9Z3PIF_ojvFME/edit#gid=2103377068"
+googlesheets4::read_sheet(url, sheet = 1) |> 
+  dplyr::filter(aula <= 1) |> 
+  dplyr::mutate(link = glue::glue("[{desc}]({url})")) |> 
+  dplyr::select(-desc, -url) |> 
+  knitr::kable()
 ```
 
 ## Redes sociais da Curso-R
