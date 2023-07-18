@@ -52,6 +52,8 @@ Fora do horário de aula ou monitoria:
 | Exercício                                                                           |
 |:------------------------------------------------------------------------------------|
 | [exercicio-1.md](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-1.md) |
+| [exercicio_2.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio_2.R)   |
+| [exercicio_3.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio_3.R)   |
 
 ## Material extra
 
@@ -77,6 +79,10 @@ relacionadas com o conteúdo da aula).
 |    1 | Materiais         | [Livro “Ciência de Dados em R”](https://livro.curso-r.com/)                                                                                                                              |
 |    1 | (Extra)           | [Livro “Metodologia de pesquisa jurimétrica”](https://livro.abj.org.br/03-estatisticas.html)                                                                                             |
 |    1 | Exemplo acadêmico | [Artigo: “Microdatasus: pacote para download e pré-processamento de microdados do Departamento de Informática do SUS (DATASUS)”](https://www.scielo.br/j/csp/a/gdJXqcrW5PPDHX8rwPDYL7F/) |
+|    2 | Introdução        | [Capítulo do livro “Ciência de Dados em R”: R Básico](https://livro.curso-r.com/3-r-base.html)                                                                                           |
+|    2 | Introdução        | [Capítulo do livro “Ciência de Dados em R”: Pacotes](https://livro.curso-r.com/4-pacotes.html)                                                                                           |
+|    2 | Pacotes           | [CRAN](https://cran.r-project.org/)                                                                                                                                                      |
+|    2 | Pacotes           | [Pacotes que fazem parte do tidyverse](https://www.tidyverse.org/packages/)                                                                                                              |
 
 ## Redes sociais da Curso-R
 
