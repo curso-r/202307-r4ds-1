@@ -70,17 +70,6 @@ Fora do horário de aula ou monitoria:
   knitr::kable()
 ```
 
-
-## Práticas
-
-```{r}
-"praticas/" |>
-  fs::dir_ls(fail = FALSE) |>
-  path_to_url() |>
-  dplyr::select(Exemplo = url) |>
-  knitr::kable()
-```
-
 ## Lição de casa
 
 ```{r}
@@ -102,7 +91,7 @@ conteúdo da aula).
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 url <- "https://docs.google.com/spreadsheets/d/1Ipmjvh3yJKRMU_ScQCb5z4UwQuzjBV9Z3PIF_ojvFME/edit#gid=2103377068"
 googlesheets4::read_sheet(url, sheet = 1) |> 
-  dplyr::filter(aula <= 2) |> 
+  dplyr::filter(aula <= 3) |> 
   dplyr::mutate(link = glue::glue("[{desc}]({url})")) |> 
   dplyr::select(-desc, -url) |> 
   knitr::kable()
