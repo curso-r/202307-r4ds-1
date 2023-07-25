@@ -391,3 +391,5 @@ glimpse(imdb)
 
 # https://dadosabertos.camara.leg.br/
 
+# https://dadosabertos.camara.leg.br/swagger/api.html#staticfile
+

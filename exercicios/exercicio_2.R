@@ -159,6 +159,15 @@ dicionario_pnud <- pnud_siglas
 
 dados_pnud_2010 <-  filter(dados_pnud, ano == 2010)
 
+
+
+dados_pnud_2010
+
+# duvida do Daniel
+slice_max(dados_pnud_2010, order_by = espvida, n =  1)
+
+
+
 # Daqui em diante, use a base dados_pnud_2010 para responder os exercícios.
 # Lembre-se que você pode acessar os valores das colunas usando o $!
 # Ex:
