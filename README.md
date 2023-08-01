@@ -52,6 +52,7 @@ Fora do horário de aula ou monitoria:
 | [exercicio-2.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-2.R)   |
 | [exercicio-3.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-3.R)   |
 | [exercicio-4.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-4.R)   |
+| [exercicio-5.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-5.R)   |
 
 ## Material extra
 
