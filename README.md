@@ -38,11 +38,12 @@ Fora do horário de aula ou monitoria:
 
 ## Scripts utilizados em aula
 
-| Exemplo                                                                                               |
-|:------------------------------------------------------------------------------------------------------|
-| [01-introducao-ao-R.R](https://curso-r.github.io/202307-r4ds-1/exemplos_de_aula/01-introducao-ao-R.R) |
-| [02-importacao.R](https://curso-r.github.io/202307-r4ds-1/exemplos_de_aula/02-importacao.R)           |
-| [03-manipulacao.R](https://curso-r.github.io/202307-r4ds-1/exemplos_de_aula/03-manipulacao.R)         |
+| Exemplo                                                                                                             |
+|:--------------------------------------------------------------------------------------------------------------------|
+| [01-introducao-ao-R.R](https://curso-r.github.io/202307-r4ds-1/exemplos_de_aula/01-introducao-ao-R.R)               |
+| [02-importacao.R](https://curso-r.github.io/202307-r4ds-1/exemplos_de_aula/02-importacao.R)                         |
+| [03-manipulacao.R](https://curso-r.github.io/202307-r4ds-1/exemplos_de_aula/03-manipulacao.R)                       |
+| [04-duvidas-exemplo-senado.R](https://curso-r.github.io/202307-r4ds-1/exemplos_de_aula/04-duvidas-exemplo-senado.R) |
 
 ## Lição de casa
 
@@ -53,6 +54,7 @@ Fora do horário de aula ou monitoria:
 | [exercicio-3.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-3.R)   |
 | [exercicio-4.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-4.R)   |
 | [exercicio-5.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-5.R)   |
+| [exercicio-6.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-6.R)   |
 
 ## Material extra
 
@@ -103,7 +105,15 @@ relacionadas com o conteúdo da aula).
 |    4 | Pipe                 | [Post sobre o pipe nativo - Blog da Curso-R](https://blog.curso-r.com/posts/2021-05-06-o-novo-pipe-esta-chegando/)                                                                       |
 |    4 | Referências gerais   | [Guia de estilo: Tidyverse](https://style.tidyverse.org/)                                                                                                                                |
 |    4 | Sugestões            | [View Pipe Steps](https://github.com/daranzolin/ViewPipeSteps)                                                                                                                           |
+|    5 | Extra - Bases        | [Post sobre o base dos dados](https://blog.curso-r.com/posts/2021-05-28-basedosdados/)                                                                                                   |
+|    5 | Manipulação de bases | [Fatiar a base de dados com slice](https://dplyr.tidyverse.org/reference/slice.html)                                                                                                     |
+|    5 | Manipulação de bases | [Vignette do dplyr - introdução](https://dplyr.tidyverse.org/articles/dplyr.html)                                                                                                        |
+|    5 | Manipulação de bases | [Pacote stringr - Lidando com textos](https://stringr.tidyverse.org/articles/stringr.html)                                                                                               |
+|    5 | Dúvidas              | [SENADO - Pesquisar matérias legislativas](https://legis.senado.leg.br/dadosabertos/docs/resource_PesquisaMateriaService.html)                                                           |
+|    5 | Extra                | [Estudo da ABJ: Critérios objetivos para porte e tráfico de drogas](https://abj.org.br/pesquisas/drogas-stf/)                                                                            |
+|    5 | Manipulação de bases | [Pacote dbplyr: dplyr para quem usa SQL](https://dbplyr.tidyverse.org/articles/translation-verb.html)                                                                                    |
 |    4 | Limpeza de bases     | [Post sobre o pacote janitor](https://blog.curso-r.com/posts/2017-07-24-janitor/)                                                                                                        |
+|    5 | Gráficos             | [Post sobre o pacote esquisse](https://blog.curso-r.com/posts/2022-03-22-esquisse/)                                                                                                      |
 
 ## Redes sociais da Curso-R
 

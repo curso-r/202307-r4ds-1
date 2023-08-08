@@ -91,7 +91,7 @@ conteúdo da aula).
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 url <- "https://docs.google.com/spreadsheets/d/1Ipmjvh3yJKRMU_ScQCb5z4UwQuzjBV9Z3PIF_ojvFME/edit#gid=2103377068"
 googlesheets4::read_sheet(url, sheet = 1) |> 
-  dplyr::filter(aula <= 4) |> 
+  dplyr::filter(aula <= 5) |> 
   dplyr::mutate(link = glue::glue("[{desc}]({url})")) |> 
   dplyr::select(-desc, -url) |> 
   knitr::kable()
