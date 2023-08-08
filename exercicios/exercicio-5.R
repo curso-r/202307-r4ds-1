@@ -1,4 +1,4 @@
-# Treinando funções:
+# Treinando as funções:
 
 # dplyr::select()
 # dplyr::arrange()

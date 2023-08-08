@@ -361,13 +361,18 @@ imdb %>%
 
 # filter ------------------------------------------------------------------
 
+# nome_da_funcao(base_de_dados, regra)
+
+# CTRL + F - pesquisa no arquivo
+
+# CTRL + SHIFT + F - pesquisa no projeto
+
 # filter() - filtrar linhas da base --------
 
 # Aqui falaremos de Conceitos importantes para filtros, 
 # seguindo de exemplos!
 
 ## Comparações lógicas -------------------------------
-
 
 # comparacao logica
 # == significa: uma coisa é igual a outra?
@@ -385,6 +390,17 @@ x == 2
 # será mantido!
 
 # filter(imdb, comparacoes_para_filtrar)
+
+
+filter(imdb, direcao == "Quentin Tarantino")
+
+# reescrever com pipe
+
+imdb %>% 
+  filter(direcao == "Quentin Tarantino") %>% 
+  arrange(ano) %>% # decrescente: desc(ano)
+  select(titulo, ano, nota_imdb) %>% 
+  View()
 
 
 imdb %>% 
@@ -422,7 +438,10 @@ imdb %>%
 
 
 ## Recentes e com nota alta
-imdb %>% filter(nota_imdb >= 9, num_avaliacoes > 10000) %>% View()
+imdb %>%
+  filter(nota_imdb >= 9, num_avaliacoes > 10000) %>%
+  View()
+
 imdb %>% filter(ano > 2010, nota_imdb > 8.5, num_avaliacoes > 1000) %>% View()
 imdb %>% filter(ano > 2010 & nota_imdb > 8.5)
 
@@ -463,13 +482,27 @@ imdb %>%
 imdb %>% 
   filter(str_detect(idioma, "Spanish")) %>% View()
 
+imdb %>% 
+  filter(str_detect(direcao, "Quentin Tarantino")) %>% 
+  View()
+
 
 # PARAR AQUI ----------------------------------
+
+
+# igual à ==
+# diferente de !=
+# maior que, menor que, maior ou igual à, menor ou igual à
+# str_detect(), str_starts()
+
 
 ## Comparações lógicas -------------------------------
 
 # operador %in%
+# o x é igual à 1
+# o x faz parte do conjunto 1, 2 e 3? SIM
 x %in% c(1, 2, 3)
+# o x faz parte do conjunto 2, 3 e 4? NÃO
 x %in% c(2, 3, 4)
 
 # Exemplo com filtros!
@@ -477,13 +510,22 @@ x %in% c(2, 3, 4)
 
 # O operador %in%
 
-
-
 imdb %>% 
-  filter(direcao %in% c('Matt Reeves', "Christopher Nolan"))
+  filter(direcao %in% c('Matt Reeves', "Christopher Nolan")) %>% View()
+
+# dá pra reescrever com o OU
+imdb %>% 
+  filter(
+    direcao == "Matt Reeves" | direcao == "Christopher Nolan"
+  )
 
 
-imdb %>%
+# ISSO NAO FUNCIONA
+# imdb %>% 
+#  filter(direcao == c("..", '...'))
+
+
+diretores_favoritos_do_will <- imdb %>%
   filter(
     direcao %in% c(
       "Quentin Tarantino",
@@ -492,8 +534,11 @@ imdb %>%
       "Steven Spielberg",
       "Francis Ford Coppola"
     )
-  )
+  ) %>% 
+  view()
 
+
+# <- 
 
 
 ## Operadores lógicos -------------------------------
@@ -503,10 +548,11 @@ imdb %>%
 # precisam resultar em TRUE
 x <- 5
 
-x >= 3
-x <= 7
+x >= 3 # verdadeiro
 
-x >= 3 & x <= 7
+x <= 7 # verdadeiro
+
+x >= 3 & x <= 7 # 
 
 x >= 3 & x <= 4
 
@@ -516,6 +562,7 @@ imdb %>%
   View()
 
 
+# menos frequente de ser usado, mas funciona!
 imdb %>% 
   filter(ano > 2010 & nota_imdb > 8.5)
 
@@ -529,8 +576,11 @@ imdb %>%
 
 
 y <- 2
-y >= 3
-y <= 7
+y >= 3 # FALSO
+y <= 7 # VERDADEIRO
+
+# & - Resultado falso, VERDADEIRO + FALSO = FALSO
+# | - Resultado verdadeiro, VERDADEIRO + FALSO = VERDADEIRO
 
 y >= 3 | y <= 7
 
@@ -540,16 +590,20 @@ y >= 3 | y <= 0
 
 ## Lucraram mais de 500 milhões OU têm nota muito alta
 imdb %>% 
-  filter(receita - orcamento > 500000000 | nota_imdb > 9)
+  filter(receita - orcamento > 500000000 | nota_imdb > 9) %>% 
+  View()
 
 # O que esse quer dizer?
 imdb %>%
   filter(ano > 2010 | nota_imdb > 8.5) %>%
   View()
 
+
+
 ## Operadores lógicos -------------------------------
 
 ## ! - Negação - É o "contrário"
+# NOT
 
 # operador de negação !
 # é o contrario
@@ -570,6 +624,35 @@ imdb %>%
   View()
 
 
+#. função que testa se algo é um valor faltante - NA
+is.na("bia")
+is.na(NA)
+
+imdb %>% 
+  filter(!is.na(orcamento)) %>% 
+  View()
+
+
+
+imdb %>% 
+  filter(!is.na(orcamento), !is.na(receita)) %>% 
+  View()
+
+
+# 
+
+imdb %>% 
+  mutate(descricao_minusculo = str_to_lower(descricao)) %>% 
+  filter(str_detect(descricao_minusculo, "woman|hero|friend")) %>% 
+  View()
+
+
+imdb %>% 
+  mutate(descricao_minusculo = str_to_lower(descricao)) %>% 
+  filter(str_detect(descricao_minusculo, "woman"),
+         str_detect(descricao_minusculo, "friend")) %>% 
+  View()
+
 
 ##  NA ---- 
 
@@ -579,14 +662,50 @@ is.na(imdb$orcamento)
 imdb %>% 
   filter(!is.na(orcamento))
 
+# tira toooodas as linhas que tenham algum NA
+imdb %>% 
+  drop_na()
+
+# tira as linhas que tem NA nas colunas indicadas
+imdb %>% 
+  drop_na(orcamento, receita)
+
+
 # o filtro por padrão tira os NAs!
 df <- tibble(x = c(1, 2, 3, NA))
 df
 
+
 filter(df, x > 1)
+
+filter(df, x < 2)
+
+# NA == 1
+# NA > 1
+# 
+# NA == NA
+
 
 # manter os NAs!
 filter(df, x > 1 | is.na(x))
+# Por padrão, a função filter retira os NAs.
+
+
+
+# ISSO DÁ ERRO
+filter(imdb, orcamento == NA)
+
+# contar os NA quando a variavel é categórica/texto
+count(imdb, producao, sort = TRUE) %>% View()
+
+# para numéricos, assim é mais fácil
+filter(imdb, is.na(orcamento)) %>% 
+  nrow()
+# tambem funciona para texto
+filter(imdb, is.na(producao)) %>% 
+  nrow()
+
+
 
 # filtrar textos sem correspondência exata
 
@@ -596,6 +715,11 @@ textos
 library(stringr) # faz parte do tidyverse
 
 str_detect(textos, pattern =  "a")
+
+str_view_all(textos, "a")
+
+# validacao do padrao usado
+str_view_all(imdb$descricao[1:10], "woman|movie", html = TRUE)
 
 
 ## Pegando os seis primeiros valores da coluna "generos"
@@ -609,7 +733,7 @@ str_detect(
 
 ## Pegando apenas os filmes que 
 ## tenham o gênero ação
-imdb %>% filter(str_detect(generos, "Action")) 
+imdb %>% filter(str_detect(generos, "Action")) %>% View()
 
 
 # filtra generos que contenha filmes que tenha "Crime" no texto
@@ -620,15 +744,18 @@ imdb %>%
 # filtra generos que seja IGUAL e APENAS "Crime"
 imdb %>% filter(generos == "Crime")
 
-
-
+# INTERVALO!
 
 
 
 # mutate ------------------------------------------------------------------
 
-# Modificando uma coluna
 
+
+# mutate(base, nome_da_coluna_para_criar = operacao_que_tem_resultado,
+       # nome_da_coluna_para_criar_2 = operacao_que_tem_resultado)
+
+# Modificando uma coluna
 imdb %>% 
   mutate(duracao = duracao/60) %>% 
   View()
@@ -639,12 +766,67 @@ imdb %>%
   mutate(duracao_horas = duracao/60) %>% 
   View()
 
+# util pra criar colunas em uma posicao especifica
 imdb %>% 
-  mutate(lucro = receita - orcamento) %>% 
+  mutate(duracao_horas = duracao/60, .after = duracao) %>% View()
+
+
+imdb %>% 
+  mutate(lucro = receita - orcamento, .after = receita) %>% 
   View()
+
+
+lucro_filmes <- imdb %>% 
+  drop_na(orcamento, receita) %>% 
+  select(titulo, ano, receita, orcamento) %>% 
+  mutate(lucro = receita - orcamento, 
+         lucrou = lucro > 0,
+         .after = orcamento) %>% 
+  arrange(lucro) 
+
+
+# Parenteses
+library(esquisse)
+esquisser(viewer = "browser")
+
+
+
+
+library(ggplot2)
+
+ggplot(lucro_filmes) +
+ aes(x = ano) +
+ geom_histogram(bins = 30L, fill = "#112446") +
+ theme_minimal() +
+ facet_wrap(vars(lucrou))
+
+
+
+grafico_exemplo <- imdb %>%
+  filter(ano >= 1950) %>%
+  filter(nota_imdb >= 5 & nota_imdb <= 10) %>%
+  ggplot() +
+  aes(x = ano) +
+  geom_histogram(bins = 30L, fill = "#46337E") +
+  labs(x = "Ano de lançamento",
+       y = "Quantidade de filmes",
+       title = "Filmes com nota entre 5 e 10, lançados a partir de 1950") +
+  theme_minimal()
+
+
+  ggsave(filename = "exemplo.jpg", 
+         plot = grafico_exemplo,
+         dpi = 300)
+
+
 
 # A função ifelse é uma ótima ferramenta
 # para fazermos classificação binária (2 CATEGORIAS)
+  
+# if else
+  # SE A CONDICAO FOR VERDADEIRA, FACA TAL COISA,
+  # SE NAO, FACA OUTRA COISA
+  
 
 imdb %>% mutate(
   lucro = receita - orcamento,
@@ -653,6 +835,21 @@ imdb %>% mutate(
   View()
 
 
+nota_categorizada <- imdb %>% 
+  select(titulo, nota_imdb) %>% 
+  mutate(
+    categoria_nota = case_when(
+      # quando essa condicao for verdadeira ~ salve esse valor,
+      nota_imdb >= 8 ~ "Alta",
+      nota_imdb >= 5 & nota_imdb < 8 ~ "Média",
+      nota_imdb < 5 ~ "Baixa",
+      .default = "Outros"
+     #  TRUE ~ "CATEGORIZAR" # Em alguns lugares aparece assim
+    )
+  )
+
+nota_categorizada %>% 
+  count(categoria_nota)
 
 # classificacao com mais de 2 categorias:
 # usar a função case_when()
@@ -666,6 +863,7 @@ imdb %>%
       TRUE ~ "Não classificado"
     )
   ) %>% View()
+
 
 # summarise ---------------------------------------------------------------
 
@@ -785,4 +983,8 @@ imdb_avaliacoes <- read_rds("dados/imdb_avaliacoes.rds")
 imdb %>% 
   left_join(imdb_avaliacoes, by = "id_filme") %>%
   View()
+
+
+# Colocar um exemplo com recodificacao
+
 
