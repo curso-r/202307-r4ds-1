@@ -55,6 +55,7 @@ Fora do horário de aula ou monitoria:
 | [exercicio-4.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-4.R)   |
 | [exercicio-5.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-5.R)   |
 | [exercicio-6.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-6.R)   |
+| [exercicio-7.R](https://curso-r.github.io/202307-r4ds-1/exercicios/exercicio-7.R)   |
 
 ## Material extra
 
@@ -80,6 +81,8 @@ relacionadas com o conteúdo da aula).
 |    1 | Materiais            | [Livro “Ciência de Dados em R”](https://livro.curso-r.com/)                                                                                                                              |
 |    1 | (Extra)              | [Livro “Metodologia de pesquisa jurimétrica”](https://livro.abj.org.br/03-estatisticas.html)                                                                                             |
 |    1 | Exemplo acadêmico    | [Artigo: “Microdatasus: pacote para download e pré-processamento de microdados do Departamento de Informática do SUS (DATASUS)”](https://www.scielo.br/j/csp/a/gdJXqcrW5PPDHX8rwPDYL7F/) |
+|    1 | Referências gerais   | [Livro R para Ciência de datos](https://es.r4ds.hadley.nz/)                                                                                                                              |
+|    1 | Boas práticas        | [Capítulo do livro “Zen do R”: .RData e .Rhistory](https://curso-r.github.io/zen-do-r/rdata-rhistory.html)                                                                               |
 |    2 | Introdução           | [Capítulo do livro “Ciência de Dados em R”: R Básico](https://livro.curso-r.com/3-r-base.html)                                                                                           |
 |    2 | Introdução           | [Capítulo do livro “Ciência de Dados em R”: Pacotes](https://livro.curso-r.com/4-pacotes.html)                                                                                           |
 |    2 | Pacotes              | [CRAN](https://cran.r-project.org/)                                                                                                                                                      |
@@ -105,6 +108,7 @@ relacionadas com o conteúdo da aula).
 |    4 | Pipe                 | [Post sobre o pipe nativo - Blog da Curso-R](https://blog.curso-r.com/posts/2021-05-06-o-novo-pipe-esta-chegando/)                                                                       |
 |    4 | Referências gerais   | [Guia de estilo: Tidyverse](https://style.tidyverse.org/)                                                                                                                                |
 |    4 | Sugestões            | [View Pipe Steps](https://github.com/daranzolin/ViewPipeSteps)                                                                                                                           |
+|    4 | Limpeza de bases     | [Post sobre o pacote janitor](https://blog.curso-r.com/posts/2017-07-24-janitor/)                                                                                                        |
 |    5 | Extra - Bases        | [Post sobre o base dos dados](https://blog.curso-r.com/posts/2021-05-28-basedosdados/)                                                                                                   |
 |    5 | Manipulação de bases | [Fatiar a base de dados com slice](https://dplyr.tidyverse.org/reference/slice.html)                                                                                                     |
 |    5 | Manipulação de bases | [Vignette do dplyr - introdução](https://dplyr.tidyverse.org/articles/dplyr.html)                                                                                                        |
@@ -117,16 +121,11 @@ relacionadas com o conteúdo da aula).
 |    6 | Extra - Bases        | [Pacote dados - Base de dados traduzidas](https://cienciadedatos.github.io/dados/)                                                                                                       |
 |    6 | Extra - Bases        | [Bases de dados no Kaggle](https://www.kaggle.com/datasets)                                                                                                                              |
 |    6 | Extra - Bases        | [Bases de dados no tidytuesday](https://github.com/rfordatascience/tidytuesday#datasets)                                                                                                 |
-|    5 | Manipulação de bases | [Pacote dbplyr: dplyr para quem usa SQL](https://dbplyr.tidyverse.org/articles/translation-verb.html)                                                                                    |
-|    4 | Limpeza de bases     | [Post sobre o pacote janitor](https://blog.curso-r.com/posts/2017-07-24-janitor/)                                                                                                        |
+|    6 | Manipulação de bases | [Pacote dbplyr: dplyr para quem usa SQL](https://dbplyr.tidyverse.org/articles/translation-verb.html)                                                                                    |
 |    6 | Trabalho Final       | [Base de dados - Google Data Search](https://datasetsearch.research.google.com/)                                                                                                         |
-|    6 | Outros               | [Pacote summarytools - Sugestão da turma](https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)                                                              |
 |    6 | Trabalho Final       | [Post Pacote dados - Base de dados traduzidas](https://blog.curso-r.com/posts/2022-04-06-pacote-dados/)                                                                                  |
 |    6 | Trabalho Final       | [Post - Bases de dados para praticar e ensinar](https://blog.curso-r.com/posts/2022-06-11-bases-de-dados/)                                                                               |
 |    6 | Trabalho Final       | [Bases de dados - Consórcio de informações sociais](http://www.nadd.prp.usp.br/cis/index.aspx)                                                                                           |
-|    6 | NA                   | [NA - Imputação da média com pacote naniar](http://naniar.njtierney.com/reference/impute_mean.html)                                                                                      |
-|    6 | NA                   | [Tutorial sobre pacote naniar](https://allisonhorst.shinyapps.io/missingexplorer/#section-introduction)                                                                                  |
-|    6 | NA                   | [Pacote naniar](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)                                                                                  |
 |    6 | Manipulação de bases | [Animações sobre dplyr + Join](https://www.garrickadenbuie.com/project/tidyexplain/)                                                                                                     |
 |    6 | Manipulação de bases | [Pacote abjutils - Remover acentos de textos](https://github.com/abjur/abjutils)                                                                                                         |
 |    6 | Joins - Unindo bases | [imagem sobre join](https://d33wubrfki0l68.cloudfront.net/aeab386461820b029b7e7606ccff1286f623bae1/ef0d4/diagrams/join-venn.png)                                                         |
@@ -134,20 +133,9 @@ relacionadas com o conteúdo da aula).
 |    6 | Joins - Unindo bases | [Tidyexplain - Ilustrações sobre joins](https://www.garrickadenbuie.com/project/tidyexplain/)                                                                                            |
 |    6 | Joins - Unindo bases | [Documentação sobre joins](https://dplyr.tidyverse.org/reference/join.html)                                                                                                              |
 |    6 | Joins - Unindo bases | [Post que usa join com bases com chave desarrumada](https://beatrizmilz.com/blog/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/)                                             |
-|    6 | Dúvidas              | [Função na_if() - converter algum texto em NA](https://dplyr.tidyverse.org/reference/na_if.html)                                                                                         |
-|    6 | Dúvidas              | [Função across() - aplicar uma função em várias colunas](https://dplyr.tidyverse.org/reference/across.html)                                                                              |
 |    6 | Dúvidas              | [Função separate_rows() - separar valores em uma coluna em várias linhas (ex. coluna genero do imdb)](https://tidyr.tidyverse.org/reference/separate_rows.html)                          |
-|    6 | Dúvidas              | [Comparar duas tibbles](https://bookdown.org/Maxine/r4ds/comparing-two-data-frames-tibbles.html)                                                                                         |
 |    6 | Joins - Unindo bases | [Video sobre joins](https://www.youtube.com/watch?v=xnUo25VRH70&t=1s)                                                                                                                    |
-|    6 | Referências gerais   | [Livro R para Ciência de datos](https://es.r4ds.hadley.nz/)                                                                                                                              |
-|    6 | Boas práticas        | [Capítulo do livro “Zen do R”: .RData e .Rhistory](https://curso-r.github.io/zen-do-r/rdata-rhistory.html)                                                                               |
-|    5 | Gráficos             | [Post sobre o pacote esquisse](https://blog.curso-r.com/posts/2022-03-22-esquisse/)                                                                                                      |
 |    6 | Referências gerais   | [Livro Zen do R](https://curso-r.github.io/zen-do-r/index.html)                                                                                                                          |
-|    6 | Conversa/Dúvidas     | [(Git) Livro Zen do R: Git e GitHub](https://curso-r.github.io/zen-do-r/git-github.html)                                                                                                 |
-|    6 | Conversa/Dúvidas     | [(Git) Material sobre Git e GitHub no RStudio](https://beatrizmilz.com/git_rstudio.html)                                                                                                 |
-|    6 | Conversa/Dúvidas     | [(Git) Playlist de videos sobre a Hacktoberfest – R-Ladies São Paulo](https://www.youtube.com/playlist?list=PLufjVrrUAoSdny-WECY4Gr2pn5OQGG_FN)                                          |
-|    6 | Dúvidas              | [Parse date - transformar textos em datas](https://readr.tidyverse.org/reference/parse_datetime.html)                                                                                    |
-|    6 | Dúvidas              | [Exemplo de RMarkdown com elementos para escrita científica](https://github.com/beatrizmilz/2022-Treinamento-Brasileiro-de-Ciencia-Aberta)                                               |
 
 ## Redes sociais da Curso-R
 
